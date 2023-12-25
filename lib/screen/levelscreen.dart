@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mainingatan/core/basestate.dart';
 import 'package:mainingatan/core/constant.dart';
+import 'package:mainingatan/data/brain.dart';
+import 'package:mainingatan/screen/gamescreen.dart';
 import 'package:mainingatan/widget/mycontainers.dart';
 
 class LevelScreen extends StatefulWidget {
@@ -43,6 +45,7 @@ class _LevelScreenState extends BaseState<LevelScreen>
               height: Utility(context).dynamicWidthPixel(250),
               width: Utility(context).dynamicWidthPixel(250),
               child: Lottie.asset(
+                
                 'assets/rocket.json',
                 repeat: true,
                 controller: _controller,
@@ -89,6 +92,14 @@ class _LevelScreenState extends BaseState<LevelScreen>
             GestureDetector(
               onTap: () {
                 print(widget.id);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(
+                      Level.Easy,
+                      widget.id,
+                    ),
+                  ),
+                );
               },
               child: MyContainers(
                 colours: ColorManager.instance!.blue,
