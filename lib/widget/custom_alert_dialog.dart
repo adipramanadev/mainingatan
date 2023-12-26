@@ -5,6 +5,8 @@ import 'package:mainingatan/core/navigation_constant.dart';
 import 'package:mainingatan/core/navigation_manager.dart';
 
 class AdvanceCustomAlert extends StatelessWidget {
+  const AdvanceCustomAlert({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -15,7 +17,7 @@ class AdvanceCustomAlert extends StatelessWidget {
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
         children: [
-          Container(
+          SizedBox(
             height: Utility(context).dynamicWidthPixel(225),
             child: Padding(
               padding: EdgeInsets.fromLTRB(

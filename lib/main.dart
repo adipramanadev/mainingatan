@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Educational Memory Game',
       theme: ThemeData(
-        primaryColor: Color(0xffD35B07),
-        scaffoldBackgroundColor: Color(0xffD35B07),
+        primaryColor: const Color(0xffD35B07),
+        scaffoldBackgroundColor: const Color(0xffD35B07),
         fontFamily: "MilkyNice-Clean",
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
