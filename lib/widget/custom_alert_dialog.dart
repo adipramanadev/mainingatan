@@ -29,7 +29,7 @@ class AdvanceCustomAlert extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Warning',
+                    'Perhatian',
                     style: TextStyle(
                       fontSize: Utility(context).dynamicTextSize(20),
                     ),
@@ -38,7 +38,7 @@ class AdvanceCustomAlert extends StatelessWidget {
                     height: Utility(context).dynamicWidthPixel(5),
                   ),
                   Text(
-                    'All of your progress will be lost, do you want to continue?',
+                    'Apakah Anda ingin melanjutkan?',
                     style: TextStyle(
                       fontSize: Utility(context).dynamicTextSize(18),
                     ),
@@ -60,7 +60,7 @@ class AdvanceCustomAlert extends StatelessWidget {
                         child: Text(
                           'Exit',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.red,
                             fontSize: Utility(context).dynamicTextSize(20),
                           ),
                         ),
@@ -73,9 +73,9 @@ class AdvanceCustomAlert extends StatelessWidget {
                           NavigationService.instance.navigateToPop();
                         },
                         child: Text(
-                          'Resume',
+                          'Lanjut',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.blueAccent,
                             fontSize: Utility(context).dynamicTextSize(20),
                           ),
                         ),

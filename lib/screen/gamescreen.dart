@@ -46,7 +46,7 @@ class _GameScreenState extends BaseState<GameScreen> {
             color: Colors.black.withOpacity(0.2),
             spreadRadius: 0.1,
             blurRadius: 5,
-            offset: Offset(0.1, 0.2),
+            offset: const Offset(0.1, 0.2),
           ),
         ],
         color: ColorManager.instance?.white,
@@ -65,10 +65,11 @@ class _GameScreenState extends BaseState<GameScreen> {
 
   _startTime() {
     _timer = Timer.periodic(Duration(seconds: 1), (t) {
-      if (mounted)
+      if (mounted) {
         setState(() {
           _time = _time - 1;
         });
+      }
     });
   }
 
@@ -82,11 +83,12 @@ class _GameScreenState extends BaseState<GameScreen> {
     _left = (_data.length ~/ 2);
     _isFinished = false;
     Future.delayed(Duration(seconds: 3), () {
-      if (mounted)
+      if (mounted) {
         setState(() {
           _start = true;
           _timer.cancel();
         });
+      }
     });
   }
 
@@ -171,39 +173,54 @@ class _GameScreenState extends BaseState<GameScreen> {
           : Scaffold(
               appBar: AppBar(
                 title: _time > 0
-                    ? Text(
-                        'Sudah Siap Tantangan Kamu? $_time',
-                        style: TextStyle(
-                          fontSize: Utility(context).dynamicTextSize(10),
-                        ),
+                    ? Row(
+                        children: [
+                          Text(
+                            overflow: TextOverflow.ellipsis,
+                            'Tantangan kamu? $_time',
+                            style: TextStyle(
+                              fontSize: Utility(context).dynamicTextSize(20),
+                            ),
+                          ),
+                        ],
                       )
-                    : Text(
-                        'Remaining Cards: $_left',
-                        style: TextStyle(
-                          fontSize: Utility(context).dynamicTextSize(10),
+                    : SingleChildScrollView(
+                        child: Text(
+                          overflow: TextOverflow.ellipsis,
+                          '$_left',
+                          style: TextStyle(
+                            fontSize: Utility(context).dynamicTextSize(2.0),
+                          ),
                         ),
                       ),
                 actions: _time > 0
                     ? []
                     : [
-                        Padding(
-                          padding: EdgeInsets.only(
-                            right: Utility(context).dynamicWidthPixel(10),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AdvanceCustomAlert();
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                right: Utility(context).dynamicWidthPixel(15),
+                              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AdvanceCustomAlert();
+                                    },
+                                  );
                                 },
-                              );
-                            },
-                            icon: SvgPicture.asset(
-                              "assets/icons/close.svg",
-                              // color: ColorManager.instance!.white,
+                                icon: SvgPicture.asset(
+                                  "assets/icons/close.svg",
+                                  colorFilter: ColorFilter.mode(
+                                      ColorManager.instance?.white ??
+                                          Colors.white,
+                                      BlendMode.srcIn),
+                                ),
+                              ),
                             ),
-                          ),
+                          ],
                         )
                       ],
                 automaticallyImplyLeading: false,
@@ -255,30 +272,33 @@ class _GameScreenState extends BaseState<GameScreen> {
                                             Future.delayed(
                                                 const Duration(
                                                     milliseconds: 160), () {
-                                              if (mounted)
+                                              if (mounted) {
                                                 setState(() {
                                                   _wait = false;
                                                 });
+                                              }
                                             });
                                           });
                                         } else {
                                           _cards[_previousIndex] = false;
                                           _cards[index] = false;
                                           print(_cards);
-                                          if (mounted)
+                                          if (mounted) {
                                             setState(() {
                                               _left -= 1;
                                             });
+                                          }
                                           if (_cards.every((t) => t == false)) {
                                             print("Won");
                                             Future.delayed(
                                                 const Duration(
                                                     milliseconds: 160), () {
-                                              if (mounted)
+                                              if (mounted) {
                                                 setState(() {
                                                   _isFinished = true;
                                                   _start = false;
                                                 });
+                                              }
                                             });
                                           }
                                         }
