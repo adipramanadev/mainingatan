@@ -101,22 +101,22 @@ List<String> imageArray(int id) {
     ];
   } else if (id == 5) {
     return [
-      'images/christmas/cookies.png',
-      'images/christmas/cookies.png',
-      'images/christmas/snowman.png',
-      'images/christmas/snowman.png',
-      'images/christmas/reindeer.png',
-      'images/christmas/reindeer.png',
-      'images/christmas/santa-claus.png',
-      'images/christmas/santa-claus.png',
-      'images/christmas/xylophone.png',
-      'images/christmas/xylophone.png',
-      'images/christmas/merry-christmas.png',
-      'images/christmas/merry-christmas.png',
-      'images/christmas/christmas-tree.png',
-      'images/christmas/christmas-tree.png',
-      'images/christmas/christmas-tree-1.png',
-      'images/christmas/christmas-tree-1.png',
+      'images/number/cookies.png',
+      'images/number/cookies.png',
+      'images/number/snowman.png',
+      'images/number/snowman.png',
+      'images/number/reindeer.png',
+      'images/number/reindeer.png',
+      'images/number/santa-claus.png',
+      'images/number/santa-claus.png',
+      'images/number/xylophone.png',
+      'images/number/xylophone.png',
+      'images/number/merry-number.png',
+      'images/number/merry-number.png',
+      'images/number/number-tree.png',
+      'images/number/number-tree.png',
+      'images/number/number-tree-1.png',
+      'images/number/number-tree-1.png',
     ];
   } else if (id == 6) {
     return [

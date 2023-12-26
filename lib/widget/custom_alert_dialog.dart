@@ -5,6 +5,8 @@ import 'package:mainingatan/core/navigation_constant.dart';
 import 'package:mainingatan/core/navigation_manager.dart';
 
 class AdvanceCustomAlert extends StatelessWidget {
+  const AdvanceCustomAlert({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -15,7 +17,7 @@ class AdvanceCustomAlert extends StatelessWidget {
         clipBehavior: Clip.none,
         alignment: Alignment.topCenter,
         children: [
-          Container(
+          SizedBox(
             height: Utility(context).dynamicWidthPixel(225),
             child: Padding(
               padding: EdgeInsets.fromLTRB(
@@ -27,7 +29,7 @@ class AdvanceCustomAlert extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Warning',
+                    'Perhatian',
                     style: TextStyle(
                       fontSize: Utility(context).dynamicTextSize(20),
                     ),
@@ -36,7 +38,7 @@ class AdvanceCustomAlert extends StatelessWidget {
                     height: Utility(context).dynamicWidthPixel(5),
                   ),
                   Text(
-                    'All of your progress will be lost, do you want to continue?',
+                    'Apakah Anda ingin melanjutkan?',
                     style: TextStyle(
                       fontSize: Utility(context).dynamicTextSize(18),
                     ),
@@ -58,7 +60,7 @@ class AdvanceCustomAlert extends StatelessWidget {
                         child: Text(
                           'Exit',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.red,
                             fontSize: Utility(context).dynamicTextSize(20),
                           ),
                         ),
@@ -71,9 +73,9 @@ class AdvanceCustomAlert extends StatelessWidget {
                           NavigationService.instance.navigateToPop();
                         },
                         child: Text(
-                          'Resume',
+                          'Lanjut',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.blueAccent,
                             fontSize: Utility(context).dynamicTextSize(20),
                           ),
                         ),

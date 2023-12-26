@@ -45,7 +45,6 @@ class _LevelScreenState extends BaseState<LevelScreen>
               height: Utility(context).dynamicWidthPixel(250),
               width: Utility(context).dynamicWidthPixel(250),
               child: Lottie.asset(
-                
                 'assets/rocket.json',
                 repeat: true,
                 controller: _controller,
@@ -74,6 +73,14 @@ class _LevelScreenState extends BaseState<LevelScreen>
             GestureDetector(
               onTap: () {
                 print(widget.id);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(
+                      Level.Medium,
+                      widget.id,
+                    ),
+                  ),
+                );
               },
               child: MyContainers(
                 colours: ColorManager.instance!.blue,
@@ -83,6 +90,15 @@ class _LevelScreenState extends BaseState<LevelScreen>
             GestureDetector(
               onTap: () {
                 print(widget.id);
+
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => GameScreen(
+                      Level.Easy,
+                      widget.id,
+                    ),
+                  ),
+                );
               },
               child: MyContainers(
                 colours: ColorManager.instance!.blue,
@@ -95,7 +111,7 @@ class _LevelScreenState extends BaseState<LevelScreen>
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => GameScreen(
-                      Level.Easy,
+                      Level.Hard,
                       widget.id,
                     ),
                   ),
