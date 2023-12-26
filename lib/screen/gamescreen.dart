@@ -24,7 +24,7 @@ class GameScreen extends StatefulWidget {
 class _GameScreenState extends BaseState<GameScreen> {
   _GameScreenState(this._level);
 
-  late Level _level;
+  final Level _level;
   int _previousIndex = -1;
   bool _flip = false;
   bool _start = false;
@@ -153,7 +153,7 @@ class _GameScreenState extends BaseState<GameScreen> {
                         ),
                         child: Center(
                           child: Text(
-                            "Play Again",
+                            "Main Lagi",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -172,15 +172,15 @@ class _GameScreenState extends BaseState<GameScreen> {
               appBar: AppBar(
                 title: _time > 0
                     ? Text(
-                        'Ready? $_time',
+                        'Sudah Siap Tantangan Kamu? $_time',
                         style: TextStyle(
-                          fontSize: Utility(context).dynamicTextSize(20),
+                          fontSize: Utility(context).dynamicTextSize(10),
                         ),
                       )
                     : Text(
                         'Remaining Cards: $_left',
                         style: TextStyle(
-                          fontSize: Utility(context).dynamicTextSize(20),
+                          fontSize: Utility(context).dynamicTextSize(10),
                         ),
                       ),
                 actions: _time > 0
@@ -188,7 +188,7 @@ class _GameScreenState extends BaseState<GameScreen> {
                     : [
                         Padding(
                           padding: EdgeInsets.only(
-                            right: Utility(context).dynamicWidthPixel(15),
+                            right: Utility(context).dynamicWidthPixel(10),
                           ),
                           child: IconButton(
                             onPressed: () {
@@ -201,7 +201,7 @@ class _GameScreenState extends BaseState<GameScreen> {
                             },
                             icon: SvgPicture.asset(
                               "assets/icons/close.svg",
-                              color: ColorManager.instance!.white,
+                              // color: ColorManager.instance!.white,
                             ),
                           ),
                         )
