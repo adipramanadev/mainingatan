@@ -1,6 +1,6 @@
 # mainingatan
 
-![OUTPUT]('https://github.com/adipramanadev/mainingatan/blob/main/OUTPUT/OUTPUT.png')
+![OUTPUT](https://github.com/adipramanadev/mainingatan/blob/main/OUTPUT/OUTPUT.png)
 
 ## Getting Started
 
