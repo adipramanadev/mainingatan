@@ -20,11 +20,11 @@ class CloseCustomAlert extends StatelessWidget {
           Container(
             height: utility.dynamicWidthPixel(225),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(10, 70, 10, 10),
+              padding: const EdgeInsets.fromLTRB(10, 70, 10, 10),
               child: Column(
                 children: [
                   Text(
-                    'Warning',
+                    'Informasi',
                     style: TextStyle(
                       fontSize: utility.dynamicTextSize(20),
                     ),
@@ -33,9 +33,9 @@ class CloseCustomAlert extends StatelessWidget {
                     height: utility.dynamicWidthPixel(5),
                   ),
                   Text(
-                    'Do you want to close the application?',
+                    'Apakah Anda ingin melanjutkan?',
                     style: TextStyle(
-                      fontSize: utility.dynamicTextSize(20),
+                      fontSize: utility.dynamicTextSize(15),
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -52,7 +52,7 @@ class CloseCustomAlert extends StatelessWidget {
                         child: Text(
                           'Exit',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.red,
                             fontSize: utility.dynamicTextSize(20),
                           ),
                         ),
@@ -65,9 +65,9 @@ class CloseCustomAlert extends StatelessWidget {
                           NavigationService.instance.navigateToPop();
                         },
                         child: Text(
-                          'Resume',
+                          'Lanjut',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.blue,
                             fontSize: utility.dynamicTextSize(20),
                           ),
                         ),

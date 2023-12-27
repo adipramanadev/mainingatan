@@ -173,55 +173,23 @@ class _GameScreenState extends BaseState<GameScreen> {
           : Scaffold(
               appBar: AppBar(
                 title: _time > 0
-                    ? Row(
-                        children: [
-                          Text(
-                            overflow: TextOverflow.ellipsis,
-                            'Tantangan kamu? $_time',
-                            style: TextStyle(
-                              fontSize: Utility(context).dynamicTextSize(20),
-                            ),
-                          ),
-                        ],
-                      )
-                    : SingleChildScrollView(
-                        child: Text(
-                          overflow: TextOverflow.ellipsis,
-                          '$_left',
-                          style: TextStyle(
-                            fontSize: Utility(context).dynamicTextSize(2.0),
-                          ),
+                    ? Text(
+                        overflow: TextOverflow.ellipsis,
+                        'Kamu Siap? $_time',
+                        style: TextStyle(
+                          fontSize: Utility(context).dynamicTextSize(20),
                         ),
+                      )
+                    : Text(
+                        overflow: TextOverflow.ellipsis,
+                        'Kartu Tersisa : $_left',
+                        style: TextStyle(
+                            fontSize: Utility(context).dynamicTextSize(20)),
                       ),
                 actions: _time > 0
                     ? []
                     : [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: Utility(context).dynamicWidthPixel(15),
-                              ),
-                              child: IconButton(
-                                onPressed: () {
-                                  showDialog(
-                                    context: context,
-                                    builder: (BuildContext context) {
-                                      return AdvanceCustomAlert();
-                                    },
-                                  );
-                                },
-                                icon: SvgPicture.asset(
-                                  "assets/icons/close.svg",
-                                  colorFilter: ColorFilter.mode(
-                                      ColorManager.instance?.white ??
-                                          Colors.white,
-                                      BlendMode.srcIn),
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+
                       ],
                 automaticallyImplyLeading: false,
                 backgroundColor: Colors.transparent,
