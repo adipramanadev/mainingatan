@@ -1,6 +1,6 @@
 # mainingatan
 
-A new Flutter project.
+![OUTPUT]('https://github.com/adipramanadev/mainingatan/blob/main/OUTPUT/OUTPUT.png')
 
 ## Getting Started
 
