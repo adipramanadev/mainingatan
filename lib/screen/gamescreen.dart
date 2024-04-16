@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mainingatan/core/basestate.dart';
 import 'package:mainingatan/core/constant.dart';
@@ -10,7 +9,6 @@ import 'package:mainingatan/data/brain.dart';
 
 import '../core/navigation_constant.dart';
 import '../core/navigation_manager.dart';
-import '../widget/custom_alert_dialog.dart';
 
 class GameScreen extends StatefulWidget {
   final Level _level;
@@ -82,7 +80,7 @@ class _GameScreenState extends BaseState<GameScreen> {
     _time = 2;
     _left = (_data.length ~/ 2);
     _isFinished = false;
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         setState(() {
           _start = true;
