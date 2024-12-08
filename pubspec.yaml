@@ -36,13 +36,22 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flip_card: ^0.7.0
-  lottie: ^2.6.0
+  lottie: ^3.1.0
   flutter_svg: ^2.0.7
-  google_fonts: ^6.1.0
+  google_fonts: ^6.2.1
+  flutter_launcher_icons: ^0.13.1
+  rename: ^3.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/launcher_icon.jpg"
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
